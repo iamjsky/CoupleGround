@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.devjsky.android.coupleground.MainViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/include_main_body"
+            layout="@layout/activity_main_body"
+           />
+        <include
+            android:visibility="gone"
+            android:id="@+id/include_main_top_bar"
+            layout="@layout/activity_main_top_bar"
+            />
+    </RelativeLayout>
+</layout>
