@@ -12,9 +12,8 @@
     <color name="line_elevation_01">#DCDCDC</color>
 
     <color name="color_skeleton">#EFEFEF</color>
-    <color name="color_menu_bar">#FFFFFF</color>
+    <color name="color_top_bar">#FDFDFD</color>
     <color name="color_page_background_01">#F9F9F9</color>
-    <color name="color_page_background_02">#FDFDFD</color>
 
     <color name="color_highlight_text_01">#005CFF</color>
     <color name="color_disable_text_01">#ADADAD</color>

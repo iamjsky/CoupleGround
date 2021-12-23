@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="addMemberViewModel"
+            type="com.devjsky.android.coupleground.AddMemberViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/color_page_background_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddMemberActivity">
+        <LinearLayout
+            android:background="@color/color_top_bar"
+            android:padding="@dimen/_10sdp"
+            android:visibility="visible"
+            android:id="@+id/layout_topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_top_bar"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+
+                    android:background="@drawable/ico_back_02"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"/>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:text="등록할 연락처를 선택해 주세요"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_11sdp"
+                    android:gravity="center|left"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"/>
+                <TextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/color_highlight_text_01"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:text=""
+                    android:id="@+id/tv_selectedCount"
+                    android:gravity="center|right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"/>
+                <TextView
+                    android:onClick="@{()->viewModel.removeAllSelectedFriends()}"
+                    android:textSize="@dimen/_10sdp"
+                    android:id="@+id/tv_cancelSelectedAll"
+                    android:textColor="@color/color_disable_text_01"
+                    android:text="선택 해제"
+                    android:gravity="center|right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"/>
+            </LinearLayout>
+
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_elevation_01" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</layout>

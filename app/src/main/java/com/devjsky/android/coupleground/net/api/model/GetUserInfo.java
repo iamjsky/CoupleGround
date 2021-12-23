@@ -1,6 +1,6 @@
-package com.devjsky.android.coupleground.net.api;
+package com.devjsky.android.coupleground.net.api.model;
 
-import com.devjsky.android.coupleground.model.CGUser;
+import com.devjsky.android.coupleground.data.model.UserInfo;
 
 import lombok.Data;
 
@@ -13,5 +13,5 @@ import lombok.Data;
 @Data
 public class GetUserInfo {
     public HttpBaseHeader header;
-    public CGUser user_info;
+    public UserInfo user_info;
 }

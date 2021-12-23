@@ -1,4 +1,4 @@
-package com.devjsky.android.coupleground.net.api;
+package com.devjsky.android.coupleground.net.api.model;
 
 import lombok.Data;
 

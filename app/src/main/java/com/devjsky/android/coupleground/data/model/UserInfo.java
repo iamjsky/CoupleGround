@@ -1,4 +1,4 @@
-package com.devjsky.android.coupleground.model;
+package com.devjsky.android.coupleground.data.model;
 
 import lombok.Data;
 
@@ -9,9 +9,13 @@ import lombok.Data;
  * Description
  */
 @Data
-public class CGUser {
+public class UserInfo {
     public Integer idx;
     public String user_name;
+    public String user_nickname;
     public String user_phone_number;
-    public String couple_start_date;
+    public String user_email;
+    public String user_profile_img;
+    public Integer linked_state;
+
 }
