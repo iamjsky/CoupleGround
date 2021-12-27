@@ -6,163 +6,223 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainViewModel"
             type="com.devjsky.android.coupleground.MainViewModel" />
 
-        <variable
-            name="mainActivity"
-            type="com.devjsky.android.coupleground.MainActivity" />
 
     </data>
 
     <RelativeLayout
-        android:background="@color/color_page_background_01"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/color_page_background_01"
         tools:context=".MainActivity">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sliding_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:background="@color/green"
+            android:elevation="0dp"
+            sothree:umanoPanelHeight="68dp"
+            sothree:umanoShadowHeight="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+            >
 
-                <Button
-                    android:onClick="@{()->mainViewModel.login()}"
-                    android:text="login()"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <Button
-                    android:onClick="@{()->mainViewModel.logout()}"
-                    android:text="logout()"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <Button
-                    android:onClick="@{()->mainViewModel.setElapsedDays()}"
-                    android:text="setElapsedDays()"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <Button
-                    android:onClick="@{()->mainActivity.moveAddMemberAct()}"
-                    android:text="moveAddMemberAct()"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <LinearLayout
-                    android:id="@+id/layout_elapsedDays"
-                    android:visibility="gone"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_180sdp">
-
-                    <com.joooonho.SelectableRoundedImageView
-                        app:sriv_oval="true"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/ic_launcher_background"
-                        android:layout_width="@dimen/_60sdp"
-                        android:layout_height="@dimen/_60sdp"/>
-                    <TextView
-                        android:id="@+id/tv_elapsedDays"
-                        android:layout_marginRight="@dimen/_20sdp"
-                        android:layout_marginLeft="@dimen/_20sdp"
-                        android:gravity="center"
-                        android:textColor="@color/red"
-                        android:textSize="@dimen/_40sdp"
-                        android:text="02323000"
-                        android:singleLine="true"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                    <com.joooonho.SelectableRoundedImageView
-                        app:sriv_oval="true"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/ic_launcher_background"
-                        android:layout_width="@dimen/_60sdp"
-                        android:layout_height="@dimen/_60sdp"/>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:id="@+id/layout_needLogin"
-                    android:padding="@dimen/_20sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_180sdp">
-
-
-                </LinearLayout>
                 <TextView
-
-                    android:id="@+id/tv_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="testtttttttttttttttttttttttttttttttt"
-                    android:textSize="@dimen/_30sdp" />
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Main Content"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:text="The Awesome Sliding Up Panel"
+                    android:textSize="16sp" />
+
             </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
-        <LinearLayout
-            android:background="@color/color_top_bar"
-            android:padding="@dimen/_10sdp"
-            android:visibility="visible"
-            android:id="@+id/layout_topBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <LinearLayout
 
+                android:background="@drawable/bg_rounded_top_01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:background="@color/red"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp"/>
+                <androidx.core.widget.NestedScrollView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()->mainViewModel.login()}"
+                            android:text="login()" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()->mainViewModel.logout()}"
+                            android:text="logout()" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()->mainViewModel.setElapsedDays()}"
+                            android:text="setElapsedDays()" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="moveAddMemberAct"
+                            android:text="moveAddMemberAct()" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_userLogged"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_elapsedDays"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_180sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <com.joooonho.SelectableRoundedImageView
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_launcher_background"
+                                app:sriv_oval="true" />
+
+                            <TextView
+                                android:id="@+id/tv_elapsedDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_20sdp"
+                                android:layout_marginRight="@dimen/_20sdp"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="02323000"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/_40sdp" />
+
+                            <com.joooonho.SelectableRoundedImageView
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="@dimen/_60sdp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_launcher_background"
+                                app:sriv_oval="true" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_userNeedLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_180sdp"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_20sdp">
+
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:id="@+id/tv_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="testtttttttttttttttttttttttttttttttt"
+                            android:textSize="@dimen/_30sdp" />
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+        <LinearLayout
+
+            android:id="@+id/layout_topBar"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_top_bar"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/color_top_bar"
                 android:gravity="center"
                 android:orientation="horizontal"
-                >
+                android:padding="@dimen/_10sdp">
 
                 <ImageView
 
-                    android:background="@drawable/ico_back_02"
                     android:layout_width="@dimen/_18sdp"
-                    android:layout_height="@dimen/_18sdp"/>
+                    android:layout_height="@dimen/_18sdp"
+                    android:background="@drawable/ico_back_02" />
 
                 <TextView
-                    android:textColor="@color/black"
-                    android:text="등록할 연락처를 선택해 주세요"
+                    android:id="@+id/btn_clicked"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_11sdp"
                     android:gravity="center|left"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_30sdp"/>
+                    android:onClick="btn_clicked"
+                    android:text="메인"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
                 <TextView
-                    android:textSize="@dimen/_10sdp"
-                    android:textColor="@color/color_highlight_text_01"
-                    android:layout_marginRight="@dimen/_4sdp"
-                    android:text=""
                     android:id="@+id/tv_selectedCount"
-                    android:gravity="center|right"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"/>
-                <TextView
-                    android:onClick="@{()->viewModel.removeAllSelectedFriends()}"
-                    android:textSize="@dimen/_10sdp"
-                    android:id="@+id/tv_cancelSelectedAll"
-                    android:textColor="@color/color_disable_text_01"
-                    android:text="선택 해제"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
                     android:gravity="center|right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"/>
+                    android:text=""
+                    android:textColor="@color/color_highlight_text_01"
+                    android:textSize="@dimen/_10sdp" />
+
             </LinearLayout>
-
-
-
 
 
             <View
@@ -171,7 +231,6 @@
                 android:background="@color/line_elevation_01" />
 
         </LinearLayout>
-
 
 
     </RelativeLayout>

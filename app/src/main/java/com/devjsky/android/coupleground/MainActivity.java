@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -26,7 +27,6 @@ public class MainActivity extends BaseActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
         super.onCreate(savedInstanceState);
@@ -69,9 +69,20 @@ public class MainActivity extends BaseActivity {
         boolean isLogin = MyInfo.instance.isLogin();
         LOG_E("userToken : " + userToken + ", isLogin : " + isLogin);
         if(!userToken.equals("") && isLogin){
-            mainBinding.layoutElapsedDays.setVisibility(View.VISIBLE);
+            mainBinding.layoutUserLogged.setVisibility(View.VISIBLE);
+            mainBinding.layoutUserNeedLogin.setVisibility(View.GONE);
         }else{
-            mainBinding.layoutElapsedDays.setVisibility(View.GONE);
+            mainBinding.layoutUserLogged.setVisibility(View.GONE);
+            mainBinding.layoutUserNeedLogin.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void btn_clicked(View view){
+        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
         }
     }
 }

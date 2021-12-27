@@ -16,7 +16,7 @@
         tools:context=".AddMemberActivity">
         <LinearLayout
             android:background="@color/color_top_bar"
-            android:padding="@dimen/_10sdp"
+
             android:visibility="visible"
             android:id="@+id/layout_topBar"
             android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-
+                android:padding="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/color_top_bar"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_30sdp"/>
                 <TextView
-                    android:onClick="@{()->viewModel.removeAllSelectedFriends()}"
+
                     android:textSize="@dimen/_10sdp"
                     android:id="@+id/tv_cancelSelectedAll"
                     android:textColor="@color/color_disable_text_01"
