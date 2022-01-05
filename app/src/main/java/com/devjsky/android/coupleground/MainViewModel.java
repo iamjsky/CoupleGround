@@ -35,13 +35,13 @@ public class MainViewModel extends BaseViewModel {
     public void login(){
         MyInfo.instance.setUser_token("test1");
         MyInfo.instance.setLogin(true);
-        ((MainActivity)mActivity).setLoggedLayout();
+       // ((MainActivity)mActivity).setLoggedLayout();
 
     }
     public void logout(){
         MyInfo.instance.setUser_token("");
         MyInfo.instance.setLogin(false);
-        ((MainActivity)mActivity).setLoggedLayout();
+        //((MainActivity)mActivity).setLoggedLayout();
     }
     public void setElapsedDays(){
         setLoading(true, mActivity);
@@ -50,7 +50,7 @@ public class MainViewModel extends BaseViewModel {
             public void onSuccess(Integer code, String msg, CoupleInfo coupleInfo) {
                 setLoading(false, mActivity);
                 String elapsedDays = coupleInfo.getElapsed_days()+"";
-                elapsedDaysData.setValue(elapsedDays);
+                elapsedDaysData.setValue(elapsedDays + "일");
             }
 
             @Override

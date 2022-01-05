@@ -18,23 +18,21 @@ public class AddMemberActivity extends BaseActivity {
         setContentView(addMemberBinding.getRoot());
         super.onCreate(savedInstanceState);
 
+        init();
 
 
     }
 
-    @Override
     void init() {
-        super.init();
+
+        setViewModel();
     }
 
-    @Override
     void setViewModel() {
-        super.setViewModel();
         addMemberViewModel = new ViewModelProvider(this).get(AddMemberViewModel.class);
         addMemberBinding.setAddMemberViewModel(addMemberViewModel);
         addMemberViewModel.setActivity(this);
 
     }
-
 
 }

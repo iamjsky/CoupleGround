@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="mainAlertFragmentViewModel"
+            type="com.devjsky.android.coupleground.MainAlertFragmentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:background="@drawable/bg_bottom_sheet_handle_01"
+                    android:onClick="btn_clicked" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="login()" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="logout()" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="setElapsedDays()" />
+
+                    <Button
+                        android:onClick="@{()->mainAlertFragmentViewModel.moveAct()}"
+                        android:id="@+id/btn_moveAddMemberAct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="moveAddMemberAct()" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_userLogged"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_400sdp"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_userNeedLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_180sdp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_20sdp">
+
+
+                    </LinearLayout>
+
+                    <TextView
+
+                        android:id="@+id/tv_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="testtttttttttttttttttttttttttttttttt"
+                        android:textSize="@dimen/_30sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+
+            android:id="@+id/layout_topBar"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_top_bar"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_top_bar"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:background="@drawable/ico_back_02" />
+
+                <TextView
+                    android:id="@+id/btn_clicked"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:onClick="btn_clicked"
+                    android:text="메인"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/tv_selectedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:gravity="center|right"
+                    android:text=""
+                    android:textColor="@color/color_highlight_text_01"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_elevation_01" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

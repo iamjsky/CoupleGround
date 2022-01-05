@@ -33,15 +33,15 @@
                 >
 
                 <ImageView
-
-                    android:background="@drawable/ico_back_02"
-                    android:layout_width="@dimen/_18sdp"
-                    android:layout_height="@dimen/_18sdp"/>
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ico_back_02"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"/>
 
                 <TextView
                     android:textColor="@color/black"
                     android:text="등록할 연락처를 선택해 주세요"
-                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_4sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     android:layout_weight="1"
                     android:textSize="@dimen/_11sdp"

@@ -17,12 +17,8 @@ public class BaseActivity extends AppCompatActivity implements MyConstants {
         mActivity = this;
         super.onCreate(savedInstanceState);
 
-        init();
     }
 
-    void init(){
-        setViewModel();
-    }
-    void setViewModel(){}
+
 
 }
