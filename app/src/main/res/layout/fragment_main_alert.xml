@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="mainAlertFragmentViewModel"
             type="com.devjsky.android.coupleground.MainAlertFragmentViewModel" />
@@ -9,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_rounded_top_01">
 
         <androidx.core.widget.NestedScrollView
 
@@ -28,14 +30,117 @@
                     android:layout_width="@dimen/_40sdp"
                     android:layout_height="@dimen/_4sdp"
                     android:layout_marginTop="@dimen/_6sdp"
-                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/bg_bottom_sheet_handle_01"
                     android:onClick="btn_clicked" />
 
-                <LinearLayout
-                    android:orientation="vertical"
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="알림"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_24sdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ico_settings_01" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginRight="@dimen/_6sdp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:gravity="center|left"
+                            android:text="다가오는 기념일"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/bg_rounded_alert_card_anniversary_01"
+                        android:elevation="@dimen/_10sdp"
+                        android:outlineAmbientShadowColor="@color/color_card_elevation_01"
+                        android:outlineSpotShadowColor="@color/color_card_elevation_01"
+                        android:padding="@dimen/_10sdp">
+
+
+                        <TextView
+                            android:id="@+id/tv_anniversaryDday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="D-45"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_anniversaryTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="100일"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_24sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_anniversaryTitle"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:text="2014.09.18 (목)"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <Button
                         android:layout_width="match_parent"
@@ -53,10 +158,10 @@
                         android:text="setElapsedDays()" />
 
                     <Button
-                        android:onClick="@{()->mainAlertFragmentViewModel.moveAct()}"
                         android:id="@+id/btn_moveAddMemberAct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="@{()->mainAlertFragmentViewModel.moveAct()}"
                         android:text="moveAddMemberAct()" />
 
                     <LinearLayout
